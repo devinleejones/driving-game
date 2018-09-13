@@ -9,6 +9,27 @@ class Car {
     this.direction = direction
     this.location = location
   }
+  turn(direction) {
+    this.direction = direction
+    this.$img.classList = ''
+    this.$img.classList.add(direction)
+  }
 }
 
 var myCar = new Car($img, 20, 'east', [0, 0])
+
+window.addEventListener('keydown', function(event) {
+  switch (event.key) {
+    case 'ArrowUp':
+      myCar.turn('north')
+      break
+    case 'ArrowDown':
+      myCar.turn('south')
+      break
+    case 'ArrowRight':
+      myCar.turn('east')
+      break
+    case 'ArrowLeft':
+      myCar.turn('west')
+  }
+})
