@@ -18,17 +18,17 @@ class Car {
     switch (this.direction) {
       case 'north':
       if(this.location[1] >= 0)
-        this.location[1] -= this.speed
-        break
+      this.location[1] -= this.speed
+      break
       case 'south':
-        this.location[1] += this.speed
-        break
+      this.location[1] += this.speed
+      break
       case 'east':
-        this.location[0] += this.speed
-        break
+      this.location[0] += this.speed
+      break
       case 'west':
       if(this.location[0] >= 0)
-        this.location[0] -= this.speed
+      this.location[0] -= this.speed
     }
     this.$img.setAttribute('style', ('top: ' + this.location[1] + 'px; left: ' + this.location[0] + 'px;'))
   }
@@ -37,7 +37,7 @@ class Car {
   }
 }
 
-var myCar = new Car($img, 20, 'east', [0, 0])
+var myCar = new Car($img, 5, 'east', [0, 0])
 
 window.addEventListener('keydown', function(event) {
   switch (event.key) {
