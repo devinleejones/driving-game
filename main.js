@@ -14,9 +14,30 @@ class Car {
     this.$img.classList = ''
     this.$img.classList.add(direction)
   }
+  move() {
+    switch (this.direction) {
+      case 'north':
+      if(this.location[1] >= 0)
+      this.location[1] -= this.speed
+      break
+      case 'south':
+      this.location[1] += this.speed
+      break
+      case 'east':
+      this.location[0] += this.speed
+      break
+      case 'west':
+      if(this.location[0] >= 0)
+      this.location[0] -= this.speed
+    }
+    this.$img.setAttribute('style', ('top: ' + this.location[1] + 'px; left: ' + this.location[0] + 'px;'))
+  }
+  start(){
+    var go = setInterval(this.move.bind(this), 16)
+  }
 }
 
-var myCar = new Car($img, 20, 'east', [0, 0])
+var myCar = new Car($img, 5, 'east', [0, 0])
 
 window.addEventListener('keydown', function(event) {
   switch (event.key) {
@@ -31,5 +52,8 @@ window.addEventListener('keydown', function(event) {
       break
     case 'ArrowLeft':
       myCar.turn('west')
+      break
+    case ' ':
+      myCar.start()
   }
 })
