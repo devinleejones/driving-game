@@ -1,6 +1,6 @@
-var $carImg = document.createElement('img')
-$carImg.setAttribute('src', 'http://res.cloudinary.com/devinleejones/image/upload/c_scale,w_88/v1536861812/images.png')
-document.body.appendChild($carImg)
+var $img = document.createElement('img')
+$img.setAttribute('src', 'http://res.cloudinary.com/devinleejones/image/upload/c_scale,w_88/v1536861812/images.png')
+document.body.appendChild($img)
 
 class Car {
   constructor($img, speed, direction, location) {
