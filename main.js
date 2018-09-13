@@ -52,5 +52,8 @@ window.addEventListener('keydown', function(event) {
       break
     case 'ArrowLeft':
       myCar.turn('west')
+      break
+    case ' ':
+      myCar.start()
   }
 })
