@@ -32,6 +32,9 @@ class Car {
     }
     this.$img.setAttribute('style', ('top: ' + this.location[1] + 'px; left: ' + this.location[0] + 'px;'))
   }
+  start(){
+    var go = setInterval(this.move.bind(this), 16)
+  }
 }
 
 var myCar = new Car($img, 20, 'east', [0, 0])
