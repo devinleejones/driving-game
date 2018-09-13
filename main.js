@@ -32,8 +32,13 @@ class Car {
     }
     this.$img.setAttribute('style', ('top: ' + this.location[1] + 'px; left: ' + this.location[0] + 'px;'))
   }
-  start(){
-    var go = setInterval(this.move.bind(this), 16)
+  start() {
+    this.go = null
+    this.go = setInterval(this.move.bind(this), 16)
+  }
+  stop() {
+    clearInterval(this.go)
+    this.go = null
   }
 }
 
@@ -54,6 +59,11 @@ window.addEventListener('keydown', function(event) {
       myCar.turn('west')
       break
     case ' ':
+    if(!myCar.go) {
       myCar.start()
+    }
+    else {
+      myCar.stop()
+    }
   }
 })
