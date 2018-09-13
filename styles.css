@@ -1,0 +1,15 @@
+.north {
+  transform: rotate(.75turn);
+}
+
+.south {
+  transform: rotate(.25turn);
+}
+
+.east {
+  transform: rotate(1turn);
+}
+
+.west {
+  transform: rotate(.5turn);
+}
